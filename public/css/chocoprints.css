@@ -1,0 +1,265 @@
+/*Inicio estilos para las grid de sadalu*/
+table.sadalu-grid tfoot .errspan {
+    float: left;
+    margin-left: 6px;
+    margin-top: -25px;
+    position: relative;
+    z-index: 1;
+    color: gray;
+}
+table.sadalu-grid tfoot .searchGrid{
+    padding-left: 23px;
+}
+/*fin estilos para las grid de sadalu*/
+
+/* posicionamiento de los boton de exportacion en las data-tables*/
+div.dt-buttons button{
+    float:left;
+    position: relative;
+    margin: 2px;
+}
+.required:after {
+    content: "*";
+    font-size: 16px;
+    color: red;
+}
+
+table.multiregistro td,
+table.multiregistro th{
+    white-space: nowrap;
+}
+
+table.multiregistro tbody select,
+table.multiregistro tbody textarea,
+table.multiregistro tbody input{
+    min-width: 150px;
+}
+
+table.multiregistro tbody td,table.multiregistro tbody th{
+    position: relative;
+}
+table.multiregistro .bootstrap-datetimepicker-widget{
+    z-index: 1;
+}
+
+table.multiregistro.sticky thead th,
+table.multiregistro.sticky thead th{
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+
+/* ----------------ESTILOS CHECKBOX MULTIREGISTRO--------------------- */
+label.custom-checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+label.custom-checkbox-container input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+label.custom-checkbox-container .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #fff;
+  border-radius: 6px;
+  border: solid 1px #ccc;
+}
+
+label.custom-checkbox-container input[type="checkbox"]:checked ~ .checkmark {
+  background-color: #3A64AE;
+}
+
+.divCheck {
+  margin: 0 auto;
+  width: 30px;
+  display: inline-block;
+}
+
+label.custom-checkbox-container .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+label.custom-checkbox-container input[type="checkbox"]:checked ~ .checkmark:after {
+  display: block;
+}
+
+label.custom-checkbox-container .checkmark:after {
+  left: 9px;
+  top: 6px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+
+/* ----------------ESTILOS CHECKBOX ENCABEZADO--------------------- */
+label.header-checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+label.header-checkbox-container input[type="checkbox"] {
+position: absolute;
+opacity: 0;
+cursor: pointer;
+height: 0;
+width: 0;
+}
+
+label.header-checkbox-container .etiquetaCheck {
+  position: relative;
+  line-height: 35px;
+  left: 0;
+  margin-left: 15px;
+
+}
+
+label.header-checkbox-container .checkmark {
+position: absolute;
+top: 0;
+left: 0;
+height: 35px;
+width: 35px;
+background-color: #fff;
+border-radius: 6px;
+border: solid 1px #3A64AE;
+}
+
+label.header-checkbox-container input[type="checkbox"]:checked ~ .checkmark {
+background-color: #3A64AE;
+}
+
+.divCheckHeader {
+margin: 5px;
+display: inline-block;
+}
+
+label.header-checkbox-container .checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+
+label.header-checkbox-container input[type="checkbox"]:checked ~ .checkmark:after {
+display: block;
+}
+
+label.header-checkbox-container .checkmark:after {
+left: 12px;
+top: 6px;
+width: 10px;
+height: 16px;
+border: solid white;
+border-width: 0 3px 3px 0;
+-webkit-transform: rotate(45deg);
+-ms-transform: rotate(45deg);
+transform: rotate(45deg);
+}
+
+
+td.multiregistro-td-truncate {
+  max-width: 250px;
+  white-space: nowrap!important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*CSS INPUT RADIO*/
+.radio-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.radio-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.radio-container .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+.radio-container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.radio-container input:checked ~ .checkmark {
+  background-color: #3A64AE;
+}
+
+.radio-container .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.radio-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.radio-container .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+
+::selection {
+  background: #3A64AE;
+  color:white;
+}
+::-moz-selection {
+  background: #3A64AE;
+  color:white;
+}
+
+form label {
+  font-weight: bold
+}

@@ -1,0 +1,8 @@
+[
+    {
+        "idCiudad" : 1,
+        "codigoCiudad" : "MED",
+        "nombreCiudad" : "MEDELLIN",
+        "departamento_id": 1
+    }
+]

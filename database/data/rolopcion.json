@@ -1,0 +1,132 @@
+[
+    {
+        "idRolOpcion"        : 2,
+        "adicionarRolOpcion" : 1,
+        "modificarRolOpcion" : 1,
+        "eliminarRolOpcion"  : 1,
+        "consultarRolOpcion" : 1,
+        "inactivarRolOpcion" : 1,
+        "rol_id"             : 1,
+        "opcion_id"          : 1
+    },
+    {
+        "idRolOpcion"        : 3,
+        "adicionarRolOpcion" : 1,
+        "modificarRolOpcion" : 1,
+        "eliminarRolOpcion"  : 1,
+        "consultarRolOpcion" : 1,
+        "inactivarRolOpcion" : 1,
+        "rol_id"             : 1,
+        "opcion_id"          : 2
+    },
+    {
+        "idRolOpcion"        : 4,
+        "adicionarRolOpcion" : 1,
+        "modificarRolOpcion" : 1,
+        "eliminarRolOpcion"  : 1,
+        "consultarRolOpcion" : 1,
+        "inactivarRolOpcion" : 1,
+        "rol_id"             : 1,
+        "opcion_id"          : 3
+    },
+    {
+        "idRolOpcion"        : 5,
+        "adicionarRolOpcion" : 1,
+        "modificarRolOpcion" : 1,
+        "eliminarRolOpcion"  : 1,
+        "consultarRolOpcion" : 1,
+        "inactivarRolOpcion" : 1,
+        "rol_id"             : 1,
+        "opcion_id"          : 4
+    },
+    {
+        "idRolOpcion"        : 6,
+        "adicionarRolOpcion" : 1,
+        "modificarRolOpcion" : 1,
+        "eliminarRolOpcion"  : 1,
+        "consultarRolOpcion" : 1,
+        "inactivarRolOpcion" : 1,
+        "rol_id"             : 1,
+        "opcion_id"          : 5
+    },
+    {
+        "idRolOpcion"        : 7,
+        "adicionarRolOpcion" : 1,
+        "modificarRolOpcion" : 1,
+        "eliminarRolOpcion"  : 1,
+        "consultarRolOpcion" : 1,
+        "inactivarRolOpcion" : 1,
+        "rol_id"             : 1,
+        "opcion_id"          : 6
+    },
+    {
+        "idRolOpcion"        : 8,
+        "adicionarRolOpcion" : 1,
+        "modificarRolOpcion" : 1,
+        "eliminarRolOpcion"  : 1,
+        "consultarRolOpcion" : 1,
+        "inactivarRolOpcion" : 1,
+        "rol_id"             : 1,
+        "opcion_id"          : 7
+    },
+    {
+        "idRolOpcion"        : 9,
+        "adicionarRolOpcion" : 1,
+        "modificarRolOpcion" : 1,
+        "eliminarRolOpcion"  : 1,
+        "consultarRolOpcion" : 1,
+        "inactivarRolOpcion" : 1,
+        "rol_id"             : 1,
+        "opcion_id"          : 8
+    },
+    {
+        "idRolOpcion"        : 10,
+        "adicionarRolOpcion" : 1,
+        "modificarRolOpcion" : 1,
+        "eliminarRolOpcion"  : 1,
+        "consultarRolOpcion" : 1,
+        "inactivarRolOpcion" : 1,
+        "rol_id"             : 1,
+        "opcion_id"          : 9
+    },
+    {
+        "idRolOpcion"        : 11,
+        "adicionarRolOpcion" : 1,
+        "modificarRolOpcion" : 1,
+        "eliminarRolOpcion"  : 1,
+        "consultarRolOpcion" : 1,
+        "inactivarRolOpcion" : 1,
+        "rol_id"             : 1,
+        "opcion_id"          : 10
+    },
+    {
+        "idRolOpcion"        : 12,
+        "adicionarRolOpcion" : 1,
+        "modificarRolOpcion" : 1,
+        "eliminarRolOpcion"  : 1,
+        "consultarRolOpcion" : 1,
+        "inactivarRolOpcion" : 1,
+        "rol_id"             : 1,
+        "opcion_id"          : 11
+    },
+    {
+        "idRolOpcion"        : 13,
+        "adicionarRolOpcion" : 1,
+        "modificarRolOpcion" : 1,
+        "eliminarRolOpcion"  : 1,
+        "consultarRolOpcion" : 1,
+        "inactivarRolOpcion" : 1,
+        "rol_id"             : 1,
+        "opcion_id"          : 12
+    },
+    {
+        "idRolOpcion"        : 14,
+        "adicionarRolOpcion" : 1,
+        "modificarRolOpcion" : 1,
+        "eliminarRolOpcion"  : 1,
+        "consultarRolOpcion" : 1,
+        "inactivarRolOpcion" : 1,
+        "rol_id"             : 1,
+        "opcion_id"          : 13
+    }
+]

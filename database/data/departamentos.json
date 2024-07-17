@@ -1,0 +1,8 @@
+[
+    {
+        "idDepartamento"     : 1,
+        "codigoDepartamento" : "ANT",
+        "nombreDepartamento" : "ANTIOQUIA",
+        "pais_id": 1
+    }
+]
