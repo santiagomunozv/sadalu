@@ -68,26 +68,5 @@
         "rutaOpcion":"/maestros/producto",
         "iconoOpcion":null,
         "modulo_id":3
-    },
-    {
-        "idOpcion":11,
-        "nombreOpcion":"Vendedores",
-        "rutaOpcion":"/maestros/vendedor",
-        "iconoOpcion":null,
-        "modulo_id":4
-    },
-    {
-        "idOpcion":12,
-        "nombreOpcion":"Pedidos",
-        "rutaOpcion":"/movimientos/pedido",
-        "iconoOpcion":null,
-        "modulo_id":5
-    },
-    {
-        "idOpcion":13,
-        "nombreOpcion":"Clientes",
-        "rutaOpcion":"/maestros/cliente",
-        "iconoOpcion":null,
-        "modulo_id":4
     }
 ]
