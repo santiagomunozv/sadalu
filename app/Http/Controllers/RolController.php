@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RolRequest;
 use App\Models\RolModel;
 use App\Models\RolOpcionModel;
 use App\Repositories\OpcionRepository;
 use Illuminate\Support\Facades\DB;
-use Http\Requests\RolRequest;
 
 class RolController extends Controller
 {

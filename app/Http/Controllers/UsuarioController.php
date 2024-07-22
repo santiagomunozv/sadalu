@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UsuarioRequest;
 use App\Models\UsuarioCompaniaRolModel;
 use App\Models\UsuarioModel;
 use App\Repositories\CompaniaRepository;
 use App\Repositories\RolRepository;
 use Illuminate\Support\Facades\DB;
-use Http\Requests\UsuarioRequest;
 
 class UsuarioController extends Controller
 {

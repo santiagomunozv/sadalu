@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PaqueteRequest;
 use App\Models\PaqueteModel;
-use Http\Requests\PaqueteRequest;
 
 class PaqueteController extends Controller
 {

@@ -8,8 +8,10 @@ use App\Http\Controllers\OpcionController;
 use App\Http\Controllers\PaqueteController;
 use App\Http\Controllers\RolController;
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\PaisController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -74,6 +76,7 @@ Route::group(['middleware' => 'auth'], function () {
         //     Route::resource('/paquete', 'PaquetesController');
         //     Route::resource('/modulo', 'ModuloController');
         //     Route::resource('/opcion', 'OpcionController');;
+
         Route::get('/cambiocompania', [CompaniaController::class, 'cambioCompania'])->name('cambioCompania');
         Route::resource('compania', CompaniaController::class);
         Route::resource('rol', RolController::class);
@@ -81,5 +84,11 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('modulo', ModuloController::class);
         Route::resource('opcion', OpcionController::class);
         Route::resource('usuario', UsuarioController::class);
+    });
+
+    Route::prefix('maestros')->group(function () {
+        //     Route::resource('pais', PaisController::class);
+
+        Route::resource('paises', PaisController::class);
     });
 });

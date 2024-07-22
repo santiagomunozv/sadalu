@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\OpcionRequest;
 use App\Models\OpcionModel;
 use App\Repositories\ModuloRepository;
-use Http\Requests\OpcionRequest;
 
 class OpcionController extends Controller
 {

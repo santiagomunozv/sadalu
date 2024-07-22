@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CompaniaRequest extends FormRequest
+class PaisRequest extends FormRequest
 {
     /**
      * Get the validation rules that apply to the request.
@@ -14,15 +14,15 @@ class CompaniaRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombreCompania' => 'required',
-            'estadoCompania' => 'required',
+            'nombrePais' => 'required',
+            'codigoPais' => 'required',
         ];
     }
     public function messages()
     {
         $mensaje = array();
-        $mensaje["nombreCompania.required"] =  "El campo Nombre es obligatorio";
-        $mensaje["estadoCompania.required"] =  "El campo Estado es obligatorio";
+        $mensaje["nombrePais.required"] =  "El campo Nombre es obligatorio";
+        $mensaje["codigoPais.required"] =  "El campo Codigo es obligatorio";
         return $mensaje;
     }
 
