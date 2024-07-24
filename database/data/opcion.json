@@ -68,5 +68,12 @@
         "rutaOpcion":"/maestros/producto",
         "iconoOpcion":null,
         "modulo_id":3
+    },
+    {
+        "idOpcion":11,
+        "nombreOpcion":"Marca",
+        "rutaOpcion":"/maestros/marca",
+        "iconoOpcion":null,
+        "modulo_id":3
     }
 ]
