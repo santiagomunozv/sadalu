@@ -75,5 +75,12 @@
         "rutaOpcion":"/maestros/marca",
         "iconoOpcion":null,
         "modulo_id":3
+    },
+    {
+        "idOpcion":12,
+        "nombreOpcion":"Tipos de identificación",
+        "rutaOpcion":"/maestros/tipoidentificacion",
+        "iconoOpcion":null,
+        "modulo_id":2
     }
 ]
