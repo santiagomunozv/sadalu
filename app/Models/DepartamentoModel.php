@@ -11,11 +11,12 @@ class DepartamentoModel extends Model
 
     protected $fillable = [
         'pais_id',
-        'codigo',
-        'nombre'
+        'codigoDepartamento',
+        'nombreDepartamento',
+        'idDepartamento'
     ];
 
-    public function departamento()
+    public function pais()
     {
         return $this->hasMany('App\PaisModel', 'pais_id');
     }
