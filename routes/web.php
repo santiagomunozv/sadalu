@@ -11,6 +11,7 @@ use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\PaisController;
 use App\Http\Controllers\DepartamentoController;
 use App\Http\Controllers\CiudadController;
+use App\Http\Controllers\TipoIdentificacionController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
@@ -92,8 +93,10 @@ Route::group(['middleware' => 'auth'], function () {
         //     Route::resource('/pais', PaisController::class);
         //     Route::resource('/departamento', PaisController::class);
         //     Route::resource('ciudad', CiudadController::class);
+        //     Route::resource('tipoidentificacion', TipoIdentificacionController::class);
         Route::resource('paises', PaisController::class);
         Route::resource('departamento', DepartamentoController::class);
         Route::resource('ciudad', CiudadController::class);
+        Route::resource('tipoidentificacion', TipoIdentificacionController::class);
     });
 });
