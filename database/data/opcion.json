@@ -82,5 +82,19 @@
         "rutaOpcion":"/maestros/tipoidentificacion",
         "iconoOpcion":null,
         "modulo_id":2
+    },
+    {
+        "idOpcion":13,
+        "nombreOpcion":"Medios de pago",
+        "rutaOpcion":"/maestros/mediopago",
+        "iconoOpcion":null,
+        "modulo_id":4
+    },
+    {
+        "idOpcion":14,
+        "nombreOpcion":"Conceptos tributarios",
+        "rutaOpcion":"/maestros/conceptotributario",
+        "iconoOpcion":null,
+        "modulo_id":4
     }
 ]

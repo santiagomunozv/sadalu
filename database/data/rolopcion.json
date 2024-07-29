@@ -118,5 +118,25 @@
         "inactivarRolOpcion" : 1,
         "rol_id"             : 1,
         "opcion_id"          : 12
+    },
+    {
+        "idRolOpcion"        : 14,
+        "adicionarRolOpcion" : 1,
+        "modificarRolOpcion" : 1,
+        "eliminarRolOpcion"  : 1,
+        "consultarRolOpcion" : 1,
+        "inactivarRolOpcion" : 1,
+        "rol_id"             : 1,
+        "opcion_id"          : 13
+    },
+    {
+        "idRolOpcion"        : 15,
+        "adicionarRolOpcion" : 1,
+        "modificarRolOpcion" : 1,
+        "eliminarRolOpcion"  : 1,
+        "consultarRolOpcion" : 1,
+        "inactivarRolOpcion" : 1,
+        "rol_id"             : 1,
+        "opcion_id"          : 14
     }
 ]
