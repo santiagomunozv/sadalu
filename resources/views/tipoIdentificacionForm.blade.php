@@ -54,7 +54,7 @@
                         {!! Form::label('requiereDigitoVerificationTipoIdentificacion', 'Requiere digito verificacion', ['class' => 'control-label required']) !!}
                         <div class="form-check">
                             {!! Form::checkbox('requiereDigitoVerificationTipoIdentificacion', true, false, ['class' => 'form-check-input', 'id' => 'activo']) !!}
-                            {!! Form::label('activo', 'Activo', ['class' => 'form-check-label']) !!}
+                            {!! Form::label('requiereDigitoVerificationTipoIdentificacion', 'Activo', ['class' => 'form-check-label']) !!}
                         </div>
                     </div>
                     <div class="col-sm-6">
@@ -62,7 +62,7 @@
                             {!! Form::label('requiereRazonSocialTipoIdentificacion', 'Requiere razon social', ['class' => 'control-label required']) !!}
                             <div class="form-check">
                                 {!! Form::checkbox('requiereRazonSocialTipoIdentificacion', true, false, ['class' => 'form-check-input', 'id' => 'activo']) !!}
-                                {!! Form::label('activo', 'Activo', ['class' => 'form-check-label']) !!}
+                                {!! Form::label('requiereRazonSocialTipoIdentificacion', 'Activo', ['class' => 'form-check-label']) !!}
                             </div>
                         </div>
                     </div>

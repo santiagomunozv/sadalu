@@ -1,7 +1,7 @@
 @extends('layouts.principal')
 
 @section('nombreModulo')
-Tipos de Identificaciones
+    Tipos de Identificaciones
 @stop
 
 @section('scripts')
@@ -41,43 +41,44 @@ Tipos de Identificaciones
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($tipoidentificacion as $tipoidentificacionreg)
+                        @foreach ($tipoidentificacion as $tipoidentificacionReg)
                             <tr>
                                 <td>
                                     <div class="btn-group" role="group" aria-label="Acciones">
                                         @if ($permisos['modificarRolOpcion'])
-                                            <a class="btn btn-success btn-sm" href="{!! URL::to('/maestros/tipoidentificacion', [$tipoidentificacionreg->idTipoIdentificacion, 'edit']) !!}">
+                                            <a class="btn btn-success btn-sm" href="{!! URL::to('/maestros/mediopago', [$tipoidentificacionReg->idTipoIdentificacion, 'edit']) !!}">
                                                 <i class="fas fa-pencil-alt"></i>
                                             </a>
                                         @endif
                                         @if ($permisos['eliminarRolOpcion'])
                                             <button type="button"
-                                                onclick="confirmarEliminacion('{{ $tipoidentificacionreg->idTipoIdentificacion }}', 'tipo_identificacion', 'TipoIdentificacion')"
+                                                onclick="confirmarEliminacion('{{ $tipoidentificacionReg->idTipoIdentificacion }}', 'tipo_identificacion', 'TipoIdentificacion')"
                                                 class="btn btn-danger btn-sm">
                                                 <i class="fas fa-trash-alt"></i>
                                             </button>
                                         @endif
                                         @if ($permisos['modificarRolOpcion'])
                                             <button class="btn btn-warning btn-sm"
-                                                onclick="cambiarEstado('{{ $tipoidentificacionreg->idTipoIdentificacion }}', 'tipo_identificacion', 'TipoIdentificacion','{{ $tipoidentificacionreg->estadoTipoIdentificacion }}')">
+                                                onclick="cambiarEstado('{{ $tipoidentificacionReg->idTipoIdentificacion }}', 'tipo_identificacion', 'TipoIdentificacion','{{ $tipoidentificacionReg->estadoTipoIdentificacion }}')">
                                                 <i class="fas fa-power-off"></i>
                                             </button>
                                         @endif
                                     </div>
                                 </td>
-                                <td>{{ $tipoidentificacionreg->idTipoIdentificacion }}</td>
-                                <td>{{ $tipoidentificacionreg->codigoDianTipoIdentificacion }}</td>
-                                <td>{{ $tipoidentificacionreg->nombreTipoIdentificacion }}</td>
-                                <td>{{ $tipoidentificacionreg->requiereDigitoVerificationTipoIdentificacion }}</td>
-                                <td>{{ $tipoidentificacionreg->requiereRazonSocialTipoIdentificacion }}</td>
-                                <td>{{ $tipoidentificacionreg->estadoTipoIdentificacion }}</td>
+                                <td>{{ $tipoidentificacionReg->idTipoIdentificacion }}</td>
+                                <td>{{ $tipoidentificacionReg->codigoDianTipoIdentificacion }}</td>
+                                <td>{{ $tipoidentificacionReg->nombreTipoIdentificacion}}</td>
+                                <td>{{ $tipoidentificacionReg->requiereDigitoVerificationTipoIdentificacion}}</td>
+                                <td>{{ $tipoidentificacionReg->requiereRazonSocialTipoIdentificacion}}</td>
+                                <td>{{ $tipoidentificacionReg->estadoTipoIdentificacion }}</td>
                             </tr>
                         @endforeach
                     </tbody>
                     <tfoot>
                         <tr>
+                            <th></th>
                             <th>Id</th>
-                            <th>Codigo DIAN</th>
+                            <th>Codigo</th>
                             <th>Nombre</th>
                             <th>Requiere digito verificacion</th>
                             <th>Requiere razon social</th>
