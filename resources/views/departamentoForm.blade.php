@@ -1,6 +1,6 @@
 @extends('layouts.principal')
 
-@section('nombreDepartamento')
+@section('nombreModulo')
     Departamentos
 @stop
 

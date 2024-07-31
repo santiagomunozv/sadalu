@@ -1,6 +1,6 @@
 @extends('layouts.principal')
 
-@section('nombreDepartamento')
+@section('nombreModulo')
     Prodcutos
 @stop
 
@@ -42,14 +42,14 @@
                 <div class="col-sm-4">
                     <div class="form-group">
                         {!! Form::label('nombreProducto', 'Descripcion', ['class' => 'control-label required']) !!}
-                        {!! Form::text('nombreProducto', null, ['class' => 'form-control', 'placeholder' => 'Ingresa Nombre del Departamento']) !!}
+                        {!! Form::text('nombreProducto', null, ['class' => 'form-control', 'placeholder' => 'Ingresa el Nombre']) !!}
                     </div>
                 </div>
 
                 <div class="col-sm-4">
                     <div class="form-group">
                         {!! Form::label('eanProducto', 'Codigo EAN', ['class' => 'control-label required']) !!}
-                        {!! Form::text('eanProducto', null, ['class' => 'form-control', 'placeholder' => 'Ingresa Nombre del Departamento']) !!}
+                        {!! Form::text('eanProducto', null, ['class' => 'form-control', 'placeholder' => 'Ingresa el codigo EAN']) !!}
                     </div>
                 </div>
 
@@ -91,7 +91,7 @@
                 </div>
 
 
-                <div class="col-sm-6">
+                <div class="col-sm-2">
                     <div class="form-group">
                         {!! Form::label('estadoProducto', 'Estado', ['class' => 'control-label']) !!}
                         {!! Form::text('estadoProducto', null, [

@@ -74,7 +74,7 @@
                                 <td>{{ $productoReg->eanProducto }}</td>
                                 <td>{{ $productoReg->nombreMarca }}</td>
                                 <td>{{ $productoReg->nombreTipoProducto }}</td>
-                                <td>{{ $productoReg->simboloUnidadMedida }}</td>
+                                <td>{{ $productoReg->nombreUnidadMedida }}</td>
                                 <td>{{ $productoReg->imagenProducto }}</td>
                                 <td>{{ $productoReg->estadoProducto }}</td>
                             </tr>

@@ -32,7 +32,7 @@ class ProductoController extends Controller
             'producto.estadoProducto',
             'marca.nombreMarca',
             'tipo_producto.nombreTipoProducto',
-            'unidad_medida.simboloUnidadMedida'
+            'unidad_medida.nombreUnidadMedida'
         )
         ->join('marca', 'producto.marca_id', '=', 'marca.idMarca')
         ->join('tipo_producto', 'producto.tipoproducto_id', '=', 'tipo_producto.idTipoProducto')
