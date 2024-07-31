@@ -12,8 +12,12 @@ use App\Http\Controllers\PaisController;
 use App\Http\Controllers\DepartamentoController;
 use App\Http\Controllers\CiudadController;
 use App\Http\Controllers\ConceptoTributarioController;
+use App\Http\Controllers\MarcaController;
 use App\Http\Controllers\MedioPagoController;
+use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\TipoIdentificacionController;
+use App\Http\Controllers\TipoProductoController;
+use App\Http\Controllers\UnidadMedidaController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
@@ -97,6 +101,10 @@ Route::group(['middleware' => 'auth'], function () {
         //     Route::resource('ciudad', CiudadController::class);
         //     Route::resource('tipoidentificacion', TipoIdentificacionController::class);
         //     Route::resource('mediopago', MedioPagoController::class);
+        //     Route::resource('marca', MarcaController::class);
+        //     Route::resource('tipoproducto', TipoProductoController::class);
+        //     Route::resource('unidadmedida', UnidadMedidaController::class);
+        //     Route::resource('producto', ProductoController::class);
 
         Route::resource('paises', PaisController::class);
         Route::resource('departamento', DepartamentoController::class);
@@ -104,6 +112,10 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('tipoidentificacion', TipoIdentificacionController::class);
         Route::resource('mediopago', MedioPagoController::class);
         Route::resource('conceptotributario', ConceptoTributarioController::class);
+        Route::resource('marca', MarcaController::class);
+        Route::resource('tipoproducto', TipoProductoController::class);
+        Route::resource('unidadmedida', UnidadMedidaController::class);
+        Route::resource('producto', ProductoController::class);
     });
 
 });
