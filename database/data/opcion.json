@@ -113,9 +113,9 @@
     },
     {
         "idOpcion":17,
-        "nombreOpcion":"Productos",
-        "rutaOpcion":"/maestros/producto",
+        "nombreOpcion":"Clientes",
+        "rutaOpcion":"/maestros/cliente",
         "iconoOpcion":null,
-        "modulo_id":3
+        "modulo_id":5
     }
 ]

@@ -15,6 +15,7 @@ class SeguridadModuloSeeder extends Seeder
             ['idModulo' => 2, 'paquete_id' => 2, 'nombreModulo' => 'General ', 'iconoModulo' => 'fa fa-folder-open'],
             ['idModulo' => 3, 'paquete_id' => 2, 'nombreModulo' => 'Inventario ', 'iconoModulo' => 'fa fa-warehouse'],
             ['idModulo' => 4, 'paquete_id' => 2, 'nombreModulo' => 'Tributario ', 'iconoModulo' => 'fa fa-calculator'],
+            ['idModulo' => 5, 'paquete_id' => 2, 'nombreModulo' => 'Tercero ', 'iconoModulo' => 'fa fa-users'],
         ];
 
         foreach ($items as $item) {
