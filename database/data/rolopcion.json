@@ -138,5 +138,35 @@
         "inactivarRolOpcion" : 1,
         "rol_id"             : 1,
         "opcion_id"          : 14
+    },
+    {
+        "idRolOpcion"        : 16,
+        "adicionarRolOpcion" : 1,
+        "modificarRolOpcion" : 1,
+        "eliminarRolOpcion"  : 1,
+        "consultarRolOpcion" : 1,
+        "inactivarRolOpcion" : 1,
+        "rol_id"             : 1,
+        "opcion_id"          : 15
+    },
+    {
+        "idRolOpcion"        : 17,
+        "adicionarRolOpcion" : 1,
+        "modificarRolOpcion" : 1,
+        "eliminarRolOpcion"  : 1,
+        "consultarRolOpcion" : 1,
+        "inactivarRolOpcion" : 1,
+        "rol_id"             : 1,
+        "opcion_id"          : 16
+    },
+    {
+        "idRolOpcion"        : 18,
+        "adicionarRolOpcion" : 1,
+        "modificarRolOpcion" : 1,
+        "eliminarRolOpcion"  : 1,
+        "consultarRolOpcion" : 1,
+        "inactivarRolOpcion" : 1,
+        "rol_id"             : 1,
+        "opcion_id"          : 17
     }
 ]

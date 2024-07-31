@@ -96,5 +96,26 @@
         "rutaOpcion":"/maestros/conceptotributario",
         "iconoOpcion":null,
         "modulo_id":4
+    },
+    {
+        "idOpcion":15,
+        "nombreOpcion":"Tipos de productos",
+        "rutaOpcion":"/maestros/tipoproducto",
+        "iconoOpcion":null,
+        "modulo_id":3
+    },
+    {
+        "idOpcion":16,
+        "nombreOpcion":"Unidades de medida",
+        "rutaOpcion":"/maestros/unidadmedida",
+        "iconoOpcion":null,
+        "modulo_id":3
+    },
+    {
+        "idOpcion":17,
+        "nombreOpcion":"Productos",
+        "rutaOpcion":"/maestros/producto",
+        "iconoOpcion":null,
+        "modulo_id":3
     }
 ]
