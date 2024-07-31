@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('cliente', function (Blueprint $table) {
             $table->bigIncrements('idCliente')->comment('Id');
-            $table->unsignedBigInteger('tipo_identificacion')->comment('Id tipo identificación');
-            $table->foreign('tipo_identificacion')->references('idTipoIdentificacion')->on('tipo_identificacion');
+            $table->unsignedBigInteger('tipoidentificacion_id')->comment('Id tipo identificación');
+            $table->foreign('tipoidentificacion_id')->references('idTipoIdentificacion')->on('tipo_identificacion');
             $table->integer("identificacionCliente")->comment("Identificación");
             $table->integer("digitoVerificacionCliente")->comment("Dígito verificación");
             $table->string("razonSocialCliente")->comment("Razón social");
