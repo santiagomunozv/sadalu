@@ -117,5 +117,12 @@
         "rutaOpcion":"/maestros/cliente",
         "iconoOpcion":null,
         "modulo_id":5
+    },
+    {
+        "idOpcion":18,
+        "nombreOpcion":"Consecutivos",
+        "rutaOpcion":"/maestros/consecutivo",
+        "iconoOpcion":null,
+        "modulo_id":4
     }
 ]
