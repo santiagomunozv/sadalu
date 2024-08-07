@@ -5,7 +5,7 @@
 @section('scripts')
     {{ Html::script('js/seguridad/companiaForm.js') }}
 @endsection
-@section('contenido')
+@section('contenido') 
     @if (isset($compania->idCompania))
         {!! Form::model($compania, [
             'route' => ['compania.update', $compania->idCompania],

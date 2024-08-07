@@ -25,9 +25,10 @@ return new class extends Migration
             $table->date('fechaFinConsecutivo')->comment('Fecha fin');
             $table->integer('numeroInicioConsecutivo')->comment('Número inicial');
             $table->integer('numeroFinConsecutivo')->comment('Número final');
+            $table->timestamps();
         });
     }
-
+ 
     /**
      * Reverse the migrations.
      *

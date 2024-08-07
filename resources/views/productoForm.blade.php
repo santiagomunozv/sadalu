@@ -1,7 +1,7 @@
 @extends('layouts.principal')
 
 @section('nombreModulo')
-    Prodcutos
+    Productos
 @stop
 
 @section('scripts')
