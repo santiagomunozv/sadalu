@@ -12,7 +12,7 @@ function grabar() {
         let data = $(formularioId).serialize();
         $.post(
             route,
-            data,
+            data, 
             function (resp) {
                 modal.establecerAccionCerrar(function () {
                     location.href = "/seguridad/compania";

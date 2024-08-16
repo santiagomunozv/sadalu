@@ -19,6 +19,7 @@ use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\TipoIdentificacionController;
 use App\Http\Controllers\TipoProductoController;
 use App\Http\Controllers\UnidadMedidaController;
+use App\Http\Controllers\ConsecutivoController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
@@ -118,6 +119,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('unidadmedida', UnidadMedidaController::class);
         Route::resource('producto', ProductoController::class);
         Route::resource('cliente', ClienteController::class);
+        Route::resource('consecutivos', ConsecutivoController::class);
+
     });
 
 });
