@@ -42,11 +42,11 @@
                     </thead>
                     <tbody>
                         @foreach ($tipoidentificacion as $tipoidentificacionReg)
-                            <tr>
+                            <tr class="{{ $tipoidentificacionReg->estadoTipoIdentificacion == 'Anulado' ? 'text-danger' : '' }}">
                                 <td>
                                     <div class="btn-group" role="group" aria-label="Acciones">
                                         @if ($permisos['modificarRolOpcion'])
-                                            <a class="btn btn-success btn-sm" href="{!! URL::to('/maestros/mediopago', [$tipoidentificacionReg->idTipoIdentificacion, 'edit']) !!}">
+                                            <a class="btn btn-success btn-sm" href="{!! URL::to('/maestros/tipoidentificacion', [$tipoidentificacionReg->idTipoIdentificacion, 'edit']) !!}">
                                                 <i class="fas fa-pencil-alt"></i>
                                             </a>
                                         @endif

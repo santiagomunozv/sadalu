@@ -12,7 +12,6 @@ class CiudadModel extends Model
         'departamento_id',
         'codigoCiudad',
         'nombreCiudad',
-        'idCiudad'
     ];
 
     public function departamento()

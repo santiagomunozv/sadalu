@@ -39,28 +39,28 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($ciudad as $ciudadReg)
+                        @foreach ($ciudad as $ciudadreg)
                             <tr>
                                 <td>
                                     <div class="btn-group" role="group" aria-label="Acciones">
                                         @if ($permisos['modificarRolOpcion'])
-                                            <a class="btn btn-success btn-sm" href="{!! URL::to('/maestros/ciudad', [$ciudadReg->idCiudad, 'edit']) !!}">
+                                            <a class="btn btn-success btn-sm" href="{!! URL::to('/maestros/ciudad', [$ciudadreg->idCiudad, 'edit']) !!}">
                                                 <i class="fas fa-pencil-alt"></i>
                                             </a>
                                         @endif
                                         @if ($permisos['eliminarRolOpcion'])
                                             <button type="button"
-                                                onclick="confirmarEliminacion('{{ $ciudadReg->idCiudad }}', 'ciudad', 'Ciudad')"
+                                                onclick="confirmarEliminacion('{{ $ciudadreg->idCiudad }}', 'ciudad', 'Ciudad')"
                                                 class="btn btn-danger btn-sm">
                                                 <i class="fas fa-trash-alt"></i>
                                             </button>
                                         @endif
                                     </div>
                                 </td>
-                                <td>{{ $ciudadReg->idCiudad }}</td>
-                                <td>{{ $ciudadReg->codigoCiudad }}</td>
-                                <td>{{ $ciudadReg->nombreCiudad}}</td>
-                                <td>{{ $ciudadReg->nombreDepartamento }}</td>
+                                <td>{{ $ciudadreg->idCiudad }}</td>
+                                <td>{{ $ciudadreg->codigoCiudad }}</td>
+                                <td>{{ $ciudadreg->nombreCiudad }}</td>
+                                <td>{{ $ciudadreg->nombreDepartamento }}</td>
                             </tr>
                         @endforeach
                     </tbody>

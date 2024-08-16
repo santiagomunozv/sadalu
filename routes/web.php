@@ -11,6 +11,7 @@ use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\PaisController;
 use App\Http\Controllers\DepartamentoController;
 use App\Http\Controllers\CiudadController;
+use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ConceptoTributarioController;
 use App\Http\Controllers\MarcaController;
 use App\Http\Controllers\MedioPagoController;
@@ -116,6 +117,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('tipoproducto', TipoProductoController::class);
         Route::resource('unidadmedida', UnidadMedidaController::class);
         Route::resource('producto', ProductoController::class);
+        Route::resource('cliente', ClienteController::class);
     });
 
 });
