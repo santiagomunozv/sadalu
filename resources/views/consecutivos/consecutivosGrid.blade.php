@@ -21,7 +21,7 @@
                         <tr>
                             <th style="width: 150px;" data-orderable="false">
                                 @if ($permisos['adicionarRolOpcion'])
-                                    <a class="btn btn-info btn-sm text-light" href="{!! URL::to('/maestros/consecutivos', ['create']) !!}">
+                                    <a class="btn btn-info btn-sm text-light" href="{!! URL::to('/maestros/consecutivo', ['create']) !!}">
                                         <i class="fa fa-plus"></i>
                                     </a>
                                 @endif
@@ -51,7 +51,7 @@
                                 <td>
                                     <div class="btn-group" role="group" aria-label="Acciones">
                                         @if ($permisos['modificarRolOpcion'])
-                                            <a class="btn btn-success btn-sm" href="{!! URL::to('/maestros/consecutivos', [$consecutivoReg->idConsecutivo, 'edit']) !!}">
+                                            <a class="btn btn-success btn-sm" href="{!! URL::to('/maestros/consecutivo', [$consecutivoReg->idConsecutivo, 'edit']) !!}">
                                                 <i class="fas fa-pencil-alt"></i>
                                             </a>
                                         @endif

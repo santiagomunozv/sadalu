@@ -1,27 +1,21 @@
 "use strict";
 let errorClass = "is-invalid";
-//  hola day, si ves esto me debes un elao
 
 function grabar() {
     modal.cargando();
     let mensajes = validarForm();
     if (mensajes && mensajes.length) {
-        console.log('hay campos vacios');
         modal.mostrarErrores(mensajes);
     } else {
-        console.log('va a enviar el formulario');
         let formularioId = "#form-consecutivos";
         let route = $(formularioId).attr("action");
         let data = $(formularioId).serialize();
-        console.log("route", route);
-        console.log("formularioId", formularioId);
         $.post(
             route,
             data,
             function (resp) {
-                console.log('respuesta', resp);
                 modal.establecerAccionCerrar(function () {
-                    location.href = "/maestros/consecutivos";
+                    location.href = "/maestros/consecutivo";
                 });
                 modal.mostrarModal(
                     "Información",
@@ -30,7 +24,6 @@ function grabar() {
             },
             "json"
         ).fail(function (resp) {
-            console.log('falló el post', resp);
             $.each(resp.responseJSON.errors, function (index, value) {
                 mensajes.push(value);
                 $("#" + index).addClass(errorClass);
@@ -42,49 +35,54 @@ function grabar() {
     function validarForm() {
         let mensajes = [];
 
-        var consecutivo = obtenerCampos("consecutivo");
+        var consecutivo = obtenerCampos("numeroConsecutivo");
         if (consecutivo.hasClass(errorClass)) {
-            mensajes.push(marcarNegrita("consecutivo"));
+            mensajes.push(marcarNegrita("Consecutivo"));
         }
 
-        var nombre = obtenerCampos("nombre");
+        var nombre = obtenerCampos("nombreConsecutivo");
         if (nombre.hasClass(errorClass)) {
-            mensajes.push(marcarNegrita("nombre"));
+            mensajes.push(marcarNegrita("Nombre"));
         }
 
-        var tipo = obtenerCampos("tipo");
+        var tipo = obtenerCampos("tipoConsecutivo");
         if (tipo.hasClass(errorClass)) {
-            mensajes.push(marcarNegrita("tipo"));
+            mensajes.push(marcarNegrita("Tipo"));
         }
 
-        var numeroResolucion = obtenerCampos("numeroResolucion");
+        var nombre = obtenerCampos("estadoConsecutivo");
+        if (nombre.hasClass(errorClass)) {
+            mensajes.push(marcarNegrita("Estado"));
+        }
+
+        var numeroResolucion = obtenerCampos("resolucionConsecutivo");
         if (numeroResolucion.hasClass(errorClass)) {
-            mensajes.push(marcarNegrita("numeroResolucion"));
+            mensajes.push(marcarNegrita("Número de resolución"));
         }
 
-        var prefijo = obtenerCampos("prefijo");
+        var prefijo = obtenerCampos("prefijoConsecutivo");
         if (prefijo.hasClass(errorClass)) {
-            mensajes.push(marcarNegrita("prefijo"));
+            mensajes.push(marcarNegrita("Prefijo"));
         }
 
-        var fechaInicio = obtenerCampos("fechaInicio");
+        var fechaInicio = obtenerCampos("fechaInicioConsecutivo");
         if (fechaInicio.hasClass(errorClass)) {
-            mensajes.push(marcarNegrita("fechaInicio"));
+            mensajes.push(marcarNegrita("Fecha de inicio"));
         }
         
-        var fechaFin = obtenerCampos("fechaFin");
+        var fechaFin = obtenerCampos("fechaFinConsecutivo");
         if (fechaFin.hasClass(errorClass)) {
-            mensajes.push(marcarNegrita("fechaFin"));
+            mensajes.push(marcarNegrita("Fecha final"));
         }
 
-        var consecutivoInicial = obtenerCampos("consecutivoInicial");
+        var consecutivoInicial = obtenerCampos("numeroInicioConsecutivo");
         if (consecutivoInicial.hasClass(errorClass)) {
-            mensajes.push(marcarNegrita("consecutivoInicial"));
+            mensajes.push(marcarNegrita("Consecutivo inicial"));
         }
         
-        var consecutivoFinal = obtenerCampos("consecutivoFinal");
+        var consecutivoFinal = obtenerCampos("numeroFinConsecutivo");
         if (consecutivoFinal.hasClass(errorClass)) {
-            mensajes.push(marcarNegrita("consecutivoFinal"));
+            mensajes.push(marcarNegrita("Consecutivo final"));
         }
         return mensajes;
     }
