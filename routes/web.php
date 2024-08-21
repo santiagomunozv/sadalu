@@ -119,7 +119,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('unidadmedida', UnidadMedidaController::class);
         Route::resource('producto', ProductoController::class);
         Route::resource('cliente', ClienteController::class);
-        Route::resource('consecutivos', ConsecutivoController::class);
+        Route::resource('consecutivo', ConsecutivoController::class);
 
     });
 
