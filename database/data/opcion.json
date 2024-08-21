@@ -124,5 +124,19 @@
         "rutaOpcion":"/maestros/consecutivo",
         "iconoOpcion":null,
         "modulo_id":4
+    },
+    {
+        "idOpcion":19,
+        "nombreOpcion":"Documentos",
+        "rutaOpcion":"/maestros/documento",
+        "iconoOpcion":null,
+        "modulo_id":4
+    },
+    {
+        "idOpcion":20,
+        "nombreOpcion":"Cajas",
+        "rutaOpcion":"/maestros/caja",
+        "iconoOpcion":null,
+        "modulo_id":4
     }
 ]
