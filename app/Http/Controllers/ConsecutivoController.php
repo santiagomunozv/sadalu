@@ -30,6 +30,7 @@ class ConsecutivoController extends Controller
     public function create()
     {
         $consecutivo = new ConsecutivoModel();
+        $consecutivo->estadoConsecutivo = "Activo";
 
         return view('consecutivos.consecutivos', compact('consecutivo'));
     }

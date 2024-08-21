@@ -5,19 +5,19 @@
 @stop
 
 @section('scripts')
-    {{ Html::script('js/seguridad/consecutivoForm.js') }}
+    {{ Html::script('js/maestros/consecutivoForm.js') }}
 @endsection
 @section('contenido')
     @if (isset($consecutivo->idConsecutivo))
         {!! Form::model($consecutivo, [
-            'route' => ['consecutivos.update', $consecutivo->idConsecutivo],
+            'route' => ['consecutivo.update', $consecutivo->idConsecutivo],
             'method' => 'PUT',
             'id' => 'form-consecutivos',
             'onsubmit' => 'return false;',
         ]) !!}
         @else
         {!! Form::model($consecutivo, [
-            'route' => ['consecutivos.store'],
+            'route' => ['consecutivo.store'],
             'method' => 'POST',
             'id' => 'form-consecutivos',
             'onsubmit' => 'return false;',
@@ -36,7 +36,7 @@
                 <div class="col-sm-6">
                     <div class="form-group">
                         {!! Form::label('numeroConsecutivo', 'Consecutivo', ['class' => 'control-label required']) !!}
-                        {!! Form::text('numeroConsecutivo', null, ['class' => 'form-control', 'placeholder' => 'Ingresa el consecutivo']) !!}
+                        {!! Form::number('numeroConsecutivo', null, ['class' => 'form-control', 'placeholder' => 'Ingresa el consecutivo']) !!}
                     </div>
                 </div>
 
@@ -61,7 +61,7 @@
                 <div class="col-sm-6">
                     <div class="form-group">
                         {!! Form::label('estadoConsecutivo', 'Estado', ['class' => 'control-label']) !!}
-                        {!! Form::text('estadoConsecutivo', 'Activo', [
+                        {!! Form::text('estadoConsecutivo', null, [
                             'readonly' => 'readonly',
                             'class' => 'form-control',
                             'placeholder' => 'Ingresa el estado',
@@ -72,7 +72,7 @@
                 <div class="col-sm-6">
                     <div class="form-group">
                         {!! Form::label('resolucionConsecutivo', 'Número de resolución', ['class' => 'control-label']) !!}
-                        {!! Form::text('resolucionConsecutivo', null, ['class' => 'form-control', 'placeholder' => 'Ingresa el número de la resolución']) !!}
+                        {!! Form::number('resolucionConsecutivo', null, ['class' => 'form-control', 'placeholder' => 'Ingresa el número de la resolución']) !!}
                     </div>
                 </div>
 
@@ -100,14 +100,14 @@
                 <div class="col-sm-6">
                     <div class="form-group">
                         {!! Form::label('numeroInicioConsecutivo', 'Consecutivo inicial', ['class' => 'control-label']) !!}
-                        {!! Form::text('numeroInicioConsecutivo', null, ['class' => 'form-control', 'placeholder' => 'Ingresa el consecutivo inicial']) !!}
+                        {!! Form::number('numeroInicioConsecutivo', null, ['class' => 'form-control', 'placeholder' => 'Ingresa el consecutivo inicial']) !!}
                     </div>
                 </div>
 
                 <div class="col-sm-6">
                     <div class="form-group">
                         {!! Form::label('numeroFinConsecutivo', 'Consecutivo final', ['class' => 'control-label']) !!}
-                        {!! Form::text('numeroFinConsecutivo', null, ['class' => 'form-control', 'placeholder' => 'Ingresa el consecutivo final']) !!}
+                        {!! Form::number('numeroFinConsecutivo', null, ['class' => 'form-control', 'placeholder' => 'Ingresa el consecutivo final']) !!}
                     </div>
                 </div>
                 
@@ -120,7 +120,7 @@
             {!! Form::button('Cancelar', [
                 'type' => 'button',
                 'class' => 'btn btn-secondary',
-                'onclick' => 'retornarToGrid("maestros", "consecutivos")',
+                'onclick' => 'retornarToGrid("maestros", "consecutivo")',
             ]) !!}
             {!! Form::close() !!}
         </div>
