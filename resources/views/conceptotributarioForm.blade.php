@@ -36,25 +36,32 @@
                 <div class="col-sm-4">
                     <div class="form-group">
                         {!! Form::label('grupoConceptoTributario', 'Grupo', ['class' => 'control-label required']) !!}
-                        {!! Form::select('grupoConceptoTributario', ['Iva' => 'IVA', 'Retelva' => 'Retelva', 'Impoconsumo' => 'Impoconsumo', 'Estanpilla' => 'Estampilla', 'Ultraprocesados' => 'Ultraprocesados'], null, ['class' => 'form-control']) !!}
+                        {!! Form::select('grupoConceptoTributario', ['Iva' => 'IVA', 'Retelva' => 'Retelva',
+                         'Impoconsumo' => 'Impoconsumo', 'Estanpilla' => 'Estampilla', 'Ultraprocesados' => 'Ultraprocesados'],
+                         null, ['class' => 'form-control', 'placeholder'=>'Seleccione el grupo']) !!}
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="form-group">
                         {!! Form::label('tipoConceptoTributario', 'Tipo', ['class' => 'control-label required']) !!}
-                        {!! Form::select('tipoConceptoTributario', ['Porcentaje' => 'Porcentaje', 'Valor' => 'Valor'], null, ['class' => 'form-control']) !!}
+                        {!! Form::select('tipoConceptoTributario', ['Porcentaje' => 'Porcentaje', 'Valor' => 'Valor'],
+                        null, ['class' => 'form-control', 'placeholder'=>'Seleccione el tipo']) !!}
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="form-group">
                         {!! Form::label('operacionConceptoTributario', 'Operacion', ['class' => 'control-label required']) !!}
-                        {!! Form::select('operacionConceptoTributario', ['Suma' => 'Suma', 'Resta' => 'Resta'], null, ['class' => 'form-control']) !!}
+                        {!! Form::select('operacionConceptoTributario', ['Suma' => 'Suma', 'Resta' => 'Resta'],
+                         null, ['class' => 'form-control', 'placeholder'=>'Seleccione la operación']) !!}
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="form-group">
                         {!! Form::label('operadorConceptoTributario', 'Operador', ['class' => 'control-label required']) !!}
-                        {!! Form::select('operadorConceptoTributario', ['Menorque' => 'Menor que', 'Mayorque' => 'Mayor que', 'Menoroigual'=>'Menor o igual', 'Mayorigual'=>'Mayor o igual', 'igual'=>'Igual que', 'Diferente'=>'Diferente que'], null, ['class' => 'form-control']) !!}
+                        {!! Form::select('operadorConceptoTributario', ['Menorque' => 'Menor que', 'Mayorque' => 'Mayor que',
+                         'Menoroigual'=>'Menor o igual', 'Mayorigual'=>'Mayor o igual',
+                          'igual'=>'Igual que', 'Diferente'=>'Diferente que'],
+                           null, ['class' => 'form-control', 'placeholder'=>'Seleccione el operador']) !!}
                     </div>
                 </div>
                 <div class="col-sm-2">

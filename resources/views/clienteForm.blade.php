@@ -54,7 +54,7 @@
                 <div class="col-sm-4">
                     <div class="form-group">
                         {!! Form::label('identificacionCliente', 'Identificación', ['class' => 'control-label required']) !!}
-                        {!! Form::text('identificacionCliente', null, ['class' => 'form-control', 'onchange' => 'CalcularDv()', 'placeholder' => 'Ingresa la identificación']) !!}
+                        {!! Form::number('identificacionCliente', null, ['class' => 'form-control', 'onchange' => 'CalcularDv()', 'placeholder' => 'Ingresa la identificación']) !!}
                     </div>
                 </div>
 
@@ -110,21 +110,21 @@
                 <div class="col-sm-6">
                     <div class="form-group">
                         {!! Form::label('telefonoCliente', 'Teléfono', ['class' => 'control-label required']) !!}
-                        {!! Form::text('telefonoCliente', null, ['class' => 'form-control', 'placeholder' => 'Ingresa el número de teléfono']) !!}
+                        {!! Form::number('telefonoCliente', null, ['class' => 'form-control', 'placeholder' => 'Ingresa el número de teléfono']) !!}
                     </div>
                 </div>
 
                 <div class="col-sm-6">
                     <div class="form-group">
                         {!! Form::label('celularCliente', 'Celular', ['class' => 'control-label required']) !!}
-                        {!! Form::text('celularCliente', null, ['class' => 'form-control', 'placeholder' => 'Ingresa el número de celular']) !!}
+                        {!! Form::number('celularCliente', null, ['class' => 'form-control', 'placeholder' => 'Ingresa el número de celular']) !!}
                     </div>
                 </div>
 
                 <div class="col-sm-6">
                     <div class="form-group">
                         {!! Form::label('emailCliente', 'Email', ['class' => 'control-label required']) !!}
-                        {!! Form::text('emailCliente', null, ['class' => 'form-control', 'placeholder' => 'Ingresa el correo']) !!}
+                        {!! Form::email('emailCliente', null, ['class' => 'form-control', 'placeholder' => 'Ingresa el correo']) !!}
                     </div>
                 </div>
 
