@@ -9,7 +9,7 @@ class ClienteModel extends Model
     protected $table = 'cliente';
     protected $primaryKey = 'idCliente';
     protected $fillable = [
-        'tipo_identificacion_id',
+        'tipoidentificacion_id',
         'identificacionCliente',
         'digitoVerificacionCliente',
         'razonSocialCliente',
@@ -26,5 +26,13 @@ class ClienteModel extends Model
         'codigoPostalCliente'
 
     ];
+    public function tipo_identificacion()
+    {
+        return $this->hasMany('App\TipoIdentificacionModel', 'tipoidentificacion_id');
+    }
+    public function CiudadModel()
+    {
+        return $this->hasMany('App\CiudadModel', 'ciudad_id');
+    }
     public $timestamps = false;
 }
