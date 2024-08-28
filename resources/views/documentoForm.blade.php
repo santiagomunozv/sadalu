@@ -115,7 +115,7 @@
                 </div>
             </div>
         </div>
-            @if (isset($C->idDocumento))
+            @if (isset($documento->idDocumento))
                 {!! Form::button('Modificar', ['type' => 'button', 'class' => 'btn btn-primary', 'onclick' => 'grabar()']) !!}
             @else
                 {!! Form::button('Adicionar', ['type' => 'button', 'class' => 'btn btn-success', 'onclick' => 'grabar()']) !!}

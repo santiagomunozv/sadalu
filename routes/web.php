@@ -21,6 +21,7 @@ use App\Http\Controllers\TipoIdentificacionController;
 use App\Http\Controllers\TipoProductoController;
 use App\Http\Controllers\UnidadMedidaController;
 use App\Http\Controllers\DocumentoController;
+use App\Http\Controllers\CajaController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
@@ -122,6 +123,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('cliente', ClienteController::class);
         Route::resource('consecutivo', ConsecutivoController::class);
         Route::resource('documento', DocumentoController::class);
+        Route::resource('caja', CajaController::class);
 
     });
 
