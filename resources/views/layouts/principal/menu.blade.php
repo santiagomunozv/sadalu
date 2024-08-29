@@ -1,4 +1,4 @@
-@foreach (Session::get('packageDinamicMenuSadaluPaquetes') as $paquete)
+ @foreach (Session::get('packageDinamicMenuSadaluPaquetes') as $paquete)
     <!-- LINEA DE DIVISION -->
     <hr class="sidebar-divider">
     {{-- PAQUETE - NIVEL 1 DEL MENU --}}
