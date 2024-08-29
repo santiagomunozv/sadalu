@@ -1,9 +1,7 @@
 @extends('layouts.principal')
-
 @section('nombreModulo')
     Documentos
 @stop
-
 @section('scripts')
     <script type="text/javascript">
         $(function() {
@@ -11,7 +9,6 @@
         });
     </script>
 @endsection
-
 @section('contenido')
     <div class="card border-left-info shadow h-100 py-2">
         <div class="card-body">
@@ -36,6 +33,7 @@
                             <th>Nombre</th>
                             <th>Consecutivo</th>
                             <th>Tipo de identificación</th>
+
                         </tr>
                     </thead>
                     <tbody>

@@ -1,9 +1,58 @@
 "use strict";
 let errorClass = "is-invalid";
-var configuracionRolOpcionData = JSON.parse(rolOpcion);
-var configuracionRolOpcion = [];
+var configuracionDocumentoData = JSON.parse(documentoCodigo);
+var configuracionDocumento = [];
 
-function showForm(formId, nameId) {
+var configuracionDocumentoLeyendaData = JSON.parse(documentoLeyenda);
+var configuracionDocumentoLeyenda = [];
+
+$(function(){
+    configuracionDocumento = new GeneradorMultiRegistro('configuracionDocumento', 'contenedorDocumento', 'configuracionDocumento');
+
+    let codigo=[JSON.parse(idEtiqueta),JSON.parse(nombreEtiqueta)]
+
+    configuracionDocumento.campoid = 'idDocumentoCodigo';
+    configuracionDocumento.campoEliminacion = 'eliminarDocumentoCodigo';
+    configuracionDocumento.botonEliminacion = true;
+    configuracionDocumento.funcionEliminacion = '';
+    configuracionDocumento.campos = ['idDocumentoCodigo', 'codigoDocumentoCodigo', 'etiquetaDocumentoCodigo'];
+    configuracionDocumento.etiqueta = ['input', 'input', 'select'];
+    configuracionDocumento.tipo = ['hidden','number',''];
+    configuracionDocumento.estilo = ['','', '','','','',''];
+    configuracionDocumento.clase = ['', '', 'chosen-select'];
+    configuracionDocumento.sololectura = [true,false,false];
+    configuracionDocumento.opciones = ['', '',codigo];
+    configuracionDocumento.funciones = ['','',''];
+    configuracionDocumento.otrosAtributos = ['','',''];
+
+
+    configuracionDocumentoData.forEach( dato => {configuracionDocumento.agregarCampos(dato , 'L');
+    });
+
+    configuracionDocumentoLeyenda = new GeneradorMultiRegistro('configuracionDocumentoLeyenda', 'contenedorDocuemntoLeyenda', 'configuracionDocumentoLeyenda');
+
+    //let leyenda=[JSON.parse(idEtiqueta),JSON.parse(nombreEtiqueta)]
+
+    configuracionDocumentoLeyenda.campoid = 'idDocumentoLeyenda';
+    configuracionDocumentoLeyenda.campoEliminacion = 'eliminarLeyendaId';
+    configuracionDocumentoLeyenda.botonEliminacion = true;
+    configuracionDocumentoLeyenda.funcionEliminacion = '';
+    configuracionDocumentoLeyenda.campos = ['idDocumentoLeyenda', 'posicionDocumentoLeyenda', 'mensajeDocumentoLeyenda'];
+    configuracionDocumentoLeyenda.etiqueta = ['input', 'input', 'input'];
+    configuracionDocumentoLeyenda.tipo = ['hidden','number','text'];
+    configuracionDocumentoLeyenda.estilo = ['','', '','','','',''];
+    configuracionDocumentoLeyenda.clase = ['', '', ''];
+    configuracionDocumentoLeyenda.sololectura = [true,false,false];
+    configuracionDocumentoLeyenda.opciones = ['', '',''];
+    configuracionDocumentoLeyenda.funciones = ['','',''];
+    configuracionDocumentoLeyenda.otrosAtributos = ['','',''];
+
+
+    configuracionDocumentoLeyendaData.forEach( dato => {configuracionDocumentoLeyenda.agregarCampos(dato , 'L');
+    });
+})
+
+function showForm(formId) {
     document.getElementById('form1').style.display = 'none';
     document.getElementById('form2').style.display = 'none';
 

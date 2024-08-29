@@ -5,6 +5,12 @@
 @stop
 
 @section('scripts')
+    <script>
+        let documentoCodigo = '<?php echo json_encode($documentoCodigo); ?>';
+        let idEtiqueta = '<?php echo json_encode($idEtiqueta); ?>';
+        let nombreEtiqueta = '<?php echo json_encode($nombreEtiqueta); ?>';
+        let documentoLeyenda = '<?php echo json_encode($documentoLeyenda); ?>';
+    </script>
     {{ Html::script('js/maestros/documentoForm.js') }}
 @endsection
 
@@ -70,13 +76,14 @@
             <div id="form1">
                 <div class="card-body">
                     <div class="row">
-                        <input type="hidden" name="eliminarRolOpcionId" id="eliminarRolOpcionId" />
+                        <input type="hidden" name="eliminarDocumentoCodigo" id="eliminarDocumentoCodigo" />
                         <div class="div card-body multi-max">
                             <table class="table table-hover table-borderless table-sm">
                                 <thead class="bg-info text-light">
                                     <tr>
                                         <th>
-                                            <button class="btn btn-info btn-sm" onclick="configuracionRolOpcion.agregarCampos([], 'L');">
+                                            <button class="btn btn-info btn-sm"
+                                                onclick="configuracionDocumento.agregarCampos([], 'L');">
                                                 <i class="fas fa-plus"></i>
                                             </button>
                                         </th>
@@ -84,7 +91,7 @@
                                         <th>Etiqueta</th>
                                     </tr>
                                 </thead>
-                                <tbody id="contenedorRolOpcion"></tbody>
+                                <tbody id="contenedorDocumento"></tbody>
                             </table>
                         </div>
                     </div>
@@ -94,13 +101,13 @@
             <div id="form2" style="display: none;">
                 <div class="card-body">
                     <div class="row">
-                        <input type="hidden" name="eliminarRolOpcionId" id="eliminarRolOpcionId" />
+                        <input type="hidden" name="eliminarLeyendaId" id="eliminarLeyendaId" />
                         <div class="div card-body multi-max">
                             <table class="table table-hover table-borderless table-sm">
                                 <thead class="bg-info text-light">
                                     <tr>
                                         <th>
-                                            <button class="btn btn-info btn-sm" onclick="configuracionRolOpcion.agregarCampos([], 'L');">
+                                            <button class="btn btn-info btn-sm" onclick="configuracionDocumentoLeyenda.agregarCampos([], 'L');">
                                                 <i class="fas fa-plus"></i>
                                             </button>
                                         </th>
@@ -108,7 +115,7 @@
                                         <th>Mensaje</th>
                                     </tr>
                                 </thead>
-                                <tbody id="contenedorRolOpcion"></tbody>
+                                <tbody id="contenedorDocuemntoLeyenda"></tbody>
                             </table>
                         </div>
                     </div>
