@@ -11,7 +11,8 @@ class DocumentoModel extends Model
     protected $fillable = [
         'consecutivo_id',
         'tipoDocumento',
-        'nombreDocumento'
+        'nombreDocumento',
+        'estadoDocumento'
 
     ];
     public function consecutivo()

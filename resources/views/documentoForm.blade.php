@@ -1,6 +1,6 @@
 @extends('layouts.principal')
 
-@section('nombreDepartamento')
+@section('nombreModulo')
     Documentos
 @stop
 
@@ -17,7 +17,7 @@
 @section('contenido')
     @if (isset($documento->idDocumento))
         {!! Form::model($documento, [
-            'route' => ['ciudad.update', $documento->idDocumento],
+            'route' => ['documento.update', $documento->idDocumento],
             'method' => 'PUT',
             'id' => 'form-documento',
             'onsubmit' => 'return false;',
@@ -38,14 +38,14 @@
 
             <div class="row">
 
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                     <div class="form-group">
                         {!! Form::label('nombreDocumento', 'Nombre', ['class' => 'control-label required']) !!}
                         {!! Form::text('nombreDocumento', null, ['class' => 'form-control', 'placeholder' => 'Ingresa el nombre del documento']) !!}
                     </div>
                 </div>
 
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                     <div class="form-group">
                         {!! Form::label('tipoDocumento', 'Tipo', ['class' => 'control-label required']) !!}
                         {!! Form::select('tipoDocumento', ['POS' => 'POS', 'Nota crédito POS' => 'Nota crédito POS', 'Nota débito POS' => 'Nota débito POS',
@@ -53,12 +53,22 @@
                     </div>
                 </div>
 
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                     <div class="form-group">
                         {!! Form::label('consecutivo_id', 'Consecutivo', ['class' => 'control-label required']) !!}
                         {!! Form::select('consecutivo_id', $consecutivo, isset($documento->idDocumento) ? $documento->consecutivo_id : null, [
                             'class' => 'chosen-select form-control',
                             'placeholder' => 'Seleccione el consecutivo',
+                        ]) !!}
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        {!! Form::label('estadoDocumento', 'Estado', ['class' => 'control-label']) !!}
+                        {!! Form::text('estadoDocumento', null, [
+                            'readonly' => 'readonly',
+                            'class' => 'form-control',
+                            'placeholder' => 'Ingresa el estado',
                         ]) !!}
                     </div>
                 </div>
@@ -91,7 +101,7 @@
                                         <th>Etiqueta</th>
                                     </tr>
                                 </thead>
-                                <tbody id="contenedorDocumento"></tbody>
+                                <tbody id="contenedorDocumentoCodigo"></tbody>
                             </table>
                         </div>
                     </div>
@@ -115,7 +125,7 @@
                                         <th>Mensaje</th>
                                     </tr>
                                 </thead>
-                                <tbody id="contenedorDocuemntoLeyenda"></tbody>
+                                <tbody id="contenedorDocumentoLeyenda"></tbody>
                             </table>
                         </div>
                     </div>

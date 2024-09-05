@@ -1,4 +1,5 @@
 "use strict";
+
 let errorClass = "is-invalid";
 var configuracionDocumentoData = JSON.parse(documentoCodigo);
 var configuracionDocumento = [];
@@ -7,7 +8,7 @@ var configuracionDocumentoLeyendaData = JSON.parse(documentoLeyenda);
 var configuracionDocumentoLeyenda = [];
 
 $(function(){
-    configuracionDocumento = new GeneradorMultiRegistro('configuracionDocumento', 'contenedorDocumento', 'configuracionDocumento');
+    configuracionDocumento = new GeneradorMultiRegistro('configuracionDocumento', 'contenedorDocumentoCodigo', 'configuracionDocumento');
 
     let codigo=[JSON.parse(idEtiqueta),JSON.parse(nombreEtiqueta)]
 
@@ -29,7 +30,7 @@ $(function(){
     configuracionDocumentoData.forEach( dato => {configuracionDocumento.agregarCampos(dato , 'L');
     });
 
-    configuracionDocumentoLeyenda = new GeneradorMultiRegistro('configuracionDocumentoLeyenda', 'contenedorDocuemntoLeyenda', 'configuracionDocumentoLeyenda');
+    configuracionDocumentoLeyenda = new GeneradorMultiRegistro('configuracionDocumentoLeyenda', 'contenedorDocumentoLeyenda', 'configuracionDocumentoLeyenda');
 
     //let leyenda=[JSON.parse(idEtiqueta),JSON.parse(nombreEtiqueta)]
 
@@ -69,7 +70,7 @@ function showForm(formId) {
 }
 
 function grabar(){
-    modal.cargando();
+    //modal.cargando();
     let mensajes = validarForm();
     if( mensajes && mensajes.length){
         modal.mostrarErrores(mensajes);
@@ -94,6 +95,30 @@ function grabar(){
     function validarForm() {
         let mensajes = [];
 
+        for (let i = 0; i < configuracionDocumento.contador; i++) {
+                var codigoDocumentoCodigo = obtenerCampos("codigoDocumentoCodigo"+i);
+                if (codigoDocumentoCodigo.hasClass(errorClass)) {
+                    mensajes.push(marcarNegrita("Codigo "+(i+1)));
+                }
+                var etiquetaDocumentoCodigo = obtenerCampos("etiquetaDocumentoCodigo"+i);
+                if (etiquetaDocumentoCodigo.hasClass(errorClass)) {
+                    mensajes.push(marcarNegrita("Etiqueta "+(i+1)));
+                }
+
+        }
+
+        for (let i = 0; i < configuracionDocumentoLeyenda.contador; i++) {
+            var posicionDocumentoLeyenda = obtenerCampos("posicionDocumentoLeyenda"+i);
+            if (posicionDocumentoLeyenda.hasClass(errorClass)) {
+                mensajes.push(marcarNegrita("Posicion "+(i+1)));
+            }
+            var mensajeDocumentoLeyenda = obtenerCampos("mensajeDocumentoLeyenda"+i);
+            if (mensajeDocumentoLeyenda.hasClass(errorClass)) {
+                mensajes.push(marcarNegrita("Mensaje "+(i+1)));
+            }
+
+        }
+
         var nombreDocumento = obtenerCampos("nombreDocumento");
         if (nombreDocumento.hasClass(errorClass)) {
             mensajes.push(marcarNegrita("Nombre"));
@@ -107,6 +132,11 @@ function grabar(){
         var consecutivo_id = obtenerCampos("consecutivo_id");
         if (consecutivo_id.hasClass(errorClass)) {
             mensajes.push(marcarNegrita("Consecutivo"));
+        }
+
+        var estadoDocumento = obtenerCampos("estadoDocumento");
+        if (estadoDocumento.hasClass(errorClass)) {
+            mensajes.push(marcarNegrita("Estado"));
         }
 
         return mensajes;

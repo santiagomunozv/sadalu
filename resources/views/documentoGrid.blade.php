@@ -33,12 +33,13 @@
                             <th>Nombre</th>
                             <th>Consecutivo</th>
                             <th>Tipo de identificación</th>
+                            <th>Estado</th>
 
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($documento as $documentoreg)
-                            <tr>
+                            <tr class="{{ $documentoreg->estadoDocumento == 'Anulado' ? 'text-danger' : '' }}">
                                 <td>
                                     <div class="btn-group" role="group" aria-label="Acciones">
                                         @if ($permisos['modificarRolOpcion'])
@@ -46,19 +47,19 @@
                                                 <i class="fas fa-pencil-alt"></i>
                                             </a>
                                         @endif
-                                        @if ($permisos['eliminarRolOpcion'])
-                                            <button type="button"
-                                                onclick="confirmarEliminacion('{{ $documentoreg->idDocumento }}', 'documento', 'Documento')"
-                                                class="btn btn-danger btn-sm">
-                                                <i class="fas fa-trash-alt"></i>
+                                        @if ($permisos['modificarRolOpcion'])
+                                            <button class="btn btn-warning btn-sm"
+                                                onclick="cambiarEstado('{{ $documentoreg->idDocumento }}', 'documento', 'Documento','{{ $documentoreg->estadoDocumento }}')">
+                                                <i class="fas fa-power-off"></i>
                                             </button>
                                         @endif
                                     </div>
                                 </td>
                                 <td>{{ $documentoreg->idDocumento }}</td>
-                                <td>{{ $documentoreg->consecutivo_id }}</td>
-                                <td>{{ $documentoreg->tipoDocumento }}</td>
                                 <td>{{ $documentoreg->nombreDocumento }}</td>
+                                <td>{{ $documentoreg->nombreConsecutivo }}</td>
+                                <td>{{ $documentoreg->tipoDocumento }}</td>
+                                <td>{{ $documentoreg->estadoDocumento }}</td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -69,6 +70,7 @@
                             <th>Nombre</th>
                             <th>Consecutivo</th>
                             <th>Tipo de identificación</th>
+                            <th>Estado</th>
                         </tr>
                     </tfoot>
                 </table>

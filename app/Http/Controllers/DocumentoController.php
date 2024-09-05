@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\DocuementoRequest;
+use App\Http\Requests\DocumentoRequest;
 use App\Models\DocumentoCodigoModel;
 use App\Models\DocumentoLeyendaModel;
 use App\Models\DocumentoModel;
@@ -25,9 +25,9 @@ class DocumentoController extends Controller
             abort(401);
         }
         $documento = DocumentoModel::from('documento')
-        ->join('consecutivo', 'documento.consecutivo_id', '=', 'consecutivo.idConsecutivo')
-        ->select('documento.idDocumento', 'documento.consecutivo_id', 'documento.tipoDocumento', 'documento.nombreDocumento')
-        ->get();
+    ->join('consecutivo', 'documento.consecutivo_id', '=', 'consecutivo.idConsecutivo')
+    ->select('documento.idDocumento', 'consecutivo.nombreConsecutivo', 'documento.tipoDocumento', 'documento.nombreDocumento', 'documento.estadoDocumento')
+    ->get();
         return view('documentoGrid', compact('documento', 'permisos'));
     }
     /**
@@ -37,6 +37,7 @@ class DocumentoController extends Controller
     public function create()
     {
         $documento = new DocumentoModel();
+        $documento->estadoDocumento = "Activo";
         $consecutivo = ConsecutivoRepository::getConsecutivoByNombreAndId();
         $idEtiqueta = ['Tipo documento', 'Código documento', 'Versión documento', 'Operación normal',
         'Operacion referenciado', 'Operación mandato',
@@ -58,7 +59,7 @@ class DocumentoController extends Controller
      * @param Request $request
      * @return Renderable
      */
-    public function store(DocuementoRequest $request)
+    public function store(DocumentoRequest $request)
     {
         DB::beginTransaction();
         try {
@@ -103,7 +104,7 @@ class DocumentoController extends Controller
         'Nota credito sin referenciar'];
         $documentoCodigo = DocumentoCodigoModel::where('documento_id', $id)->get();
         $documentoLeyenda = DocumentoLeyendaModel::where('documento_id', $id)->get();
-        return view('documentoForm', compact('documento', 'consecutivo', 'documentoCodigo', 'documentoLeyenda', 'idEtiqueta', 'nombreEtiqueta'));
+        return view('documentoForm', compact('documento', 'consecutivo', 'idEtiqueta', 'nombreEtiqueta', 'documentoCodigo', 'documentoLeyenda'));
     }
 
     /**
@@ -112,7 +113,7 @@ class DocumentoController extends Controller
      * @param int $id
      * @return Renderable
      */
-    public function update(DocuementoRequest $request, $id)
+    public function update(DocumentoRequest $request, $id)
     {
         try {
             $documento = DocumentoModel::find($id);
