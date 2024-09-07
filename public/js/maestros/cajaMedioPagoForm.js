@@ -1,33 +1,39 @@
 "use strict";
+
 let errorClass = "is-invalid";
-var configuracionCajaMedioPagoData = JSON.parse(usuarioCompaniaRol);
+var configuracionCajaMedioPagoData = JSON.parse(medio_pago || '[]');
+
 var configuracionCajaMedioPago = [];
 
 $(function(){
-    configuracionCajaMedioPago = new GeneradorMultiRegistro('configuracionCajaMedioPago', 'contenedorCajaMedioPago', 'configuracionCajaMedioPago');
-
-    let optionsR=[JSON.parse(idCaja),JSON.parse(caja_id)]
-    let optionsC=[JSON.parse(idMedioPago),JSON.parse(mediopago_id)]
-
-
-    configuracionCajaMedioPago.campoid = 'idCajaMedioPago';
-    configuracionCajaMedioPago.campoEliminacion = 'eliminarCajaMedioPago';
-    configuracionCajaMedioPago.botonEliminacion = true;
-    configuracionCajaMedioPago.funcionEliminacion = '';
-    configuracionCajaMedioPago.campos = ['idCajaMedioPago', 'caja_id', 'mediopago_id'];
-    configuracionCajaMedioPago.etiqueta = ['input', 'select', 'select'];
-    configuracionCajaMedioPago.tipo = ['hidden','',''];
-    configuracionCajaMedioPago.estilo = ['','', ''];
-    configuracionCajaMedioPago.clase = ['', '', ''];
-    configuracionCajaMedioPago.sololectura = [true,false,false];
-    configuracionCajaMedioPago.opciones = ['', optionsR, optionsC];
-    configuracionCajaMedioPago.funciones = ['','',''];
-    configuracionCajaMedioPago.otrosAtributos = ['','',''];
-
-
-    configuracionCajaMedioPagoData.forEach( dato => {configuracionCajaMedioPago.agregarCampos(dato , 'L');
-    });
-})
+    // Asegúrate de que GeneradorMultiRegistro está disponible  
+    if (typeof GeneradorMultiRegistro !== 'undefined') {
+        configuracionCajaMedioPago = new GeneradorMultiRegistro('configuracionCajaMedioPago', 'contenedorCajaMedioPago', 'configuracionCajaMedioPago');
+    
+        let optionsR = [{id: idCaja || 0, name: caja_id || ''}];
+        let optionsC = [{id: idMedioPago || 0, name: idMedioPago || ''}];
+    
+        configuracionCajaMedioPago.campoid = 'idMedioPago';
+        configuracionCajaMedioPago.campoEliminacion = 'eliminarCajaMedioPago';
+        configuracionCajaMedioPago.botonEliminacion = true;
+        configuracionCajaMedioPago.funcionEliminacion = '';
+        configuracionCajaMedioPago.campos = ['idMedioPago', 'nombreMedioPago'];
+        configuracionCajaMedioPago.etiqueta = ['input', 'select'];
+        configuracionCajaMedioPago.tipo = ['hidden','',''];
+        configuracionCajaMedioPago.estilo = ['','', ''];
+        configuracionCajaMedioPago.clase = ['', '', ''];
+        configuracionCajaMedioPago.sololectura = [true,false,false];
+        configuracionCajaMedioPago.opciones = ['', optionsR, optionsC];
+        configuracionCajaMedioPago.funciones = ['','',''];
+        configuracionCajaMedioPago.otrosAtributos = ['','',''];
+    
+        configuracionCajaMedioPagoData.forEach(dato => {
+            configuracionCajaMedioPago.agregarCampos(dato, 'L');
+        });
+    } else {
+        console.error('GeneradorMultiRegistro no está definido.');
+    }
+});
 
 function showForm(formId, nameId) {
     document.getElementById('form1').style.display = 'none';
@@ -54,15 +60,15 @@ function grabar(){
         let formularioId = "#form-caja";
         let route = $(formularioId).attr("action");
         let data = $(formularioId).serialize();
-        $.post(route,data, function( resp ){
+        $.post(route, data, function(resp){
             modal.establecerAccionCerrar(function(){
                 location.href = "/maestros/caja";
             });
-            modal.mostrarModal("Información" , "<div class=\"alert alert-success\">Los datos han sido guardados correctamente</div>");
-        },"json").fail( function(resp){
+            modal.mostrarModal("Información", "<div class=\"alert alert-success\">Los datos han sido guardados correctamente</div>");
+        }, "json").fail(function(resp){
             $.each(resp.responseJSON.errors, function(index, value) {
-                mensajes.push( value );
-                $("#"+index).addClass(errorClass);
+                mensajes.push(value);
+                $("#" + index).addClass(errorClass);
             });
             modal.mostrarErrores(mensajes);
         });
@@ -70,7 +76,6 @@ function grabar(){
 
     function validarForm() {
         let mensajes = [];
-
 
         var nombreCaja = obtenerCampos("nombreCaja");
         if (nombreCaja.hasClass(errorClass)) {
@@ -85,9 +90,8 @@ function grabar(){
         return mensajes;
     }
 
-
-    function obtenerCampos(imput) {
-        let campo = $("#" + imput);
+    function obtenerCampos(input) {
+        let campo = $("#" + input);
         let campo_AE = campo.val();
 
         return !campo_AE

@@ -32,6 +32,7 @@
                             <th>Código</th>
                             <th>Nombre</th>
                             <th>Usuario</th>
+                            <th>EStado</th>
 
                         </tr>
                     </thead>
@@ -45,11 +46,17 @@
                                                 <i class="fas fa-pencil-alt"></i>
                                             </a>
                                         @endif
-                                        @if ($permisos['eliminarRolOpcion'])
+                                        {{-- @if ($permisos['eliminarRolOpcion'])
                                             <button type="button"
                                                 onclick="confirmarEliminacion('{{ $cajareg->idCaja }}', 'caja', 'Caja')"
                                                 class="btn btn-danger btn-sm">
                                                 <i class="fas fa-trash-alt"></i>
+                                            </button>
+                                        @endif --}}
+                                        @if ($permisos['modificarRolOpcion'])
+                                            <button class="btn btn-warning btn-sm"
+                                                onclick="cambiarEstado('{{ $cajareg->idCaja }}', 'caja', 'caja','{{ $cajareg->estadoCaja }}')">
+                                                <i class="fas fa-power-off"></i>
                                             </button>
                                         @endif
                                     </div>
@@ -57,6 +64,7 @@
                                 <td>{{ $cajareg->idCaja }}</td>
                                 <td>{{ $cajareg->nombreCaja }}</td>
                                 <td>{{ $cajareg->usuario_id }}</td>
+                                <td>{{ $cajareg->estadoCaja }}</td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -66,6 +74,7 @@
                             <th>Código</th>
                             <th>Nombre</th>
                             <th>Usuario</th>
+                            <th>EStado</th>
                         </tr>
                     </tfoot>
                 </table>

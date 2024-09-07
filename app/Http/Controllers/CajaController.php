@@ -6,10 +6,12 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\CajaModel;
+use App\Models\MedioPagoModel;
 use App\Models\CajaMedioPagoModel;
 use App\Models\UsuarioModel;
-use App\Models\CajaControlModel;    
+use App\Models\CajaControlModel;
 use App\Repositories\UsuarioCajaRepository;
+use App\Repositories\MedioPagoRepository;
 
 class CajaController extends Controller
 {
@@ -39,7 +41,12 @@ class CajaController extends Controller
         $caja = new cajaModel();
         $usuario = UsuarioCajaRepository::getUsuarioCajaByNombreAndId();
         $caja_control = CajaControlModel::where('caja_id', $caja->idCaja)->get();
-        return view('cajaForm', compact('caja', 'usuario', 'caja_control'));
+        $idMedioPago = MedioPagoRepository::getMedioPagoById();
+        $nombreMedioPago = MedioPagoRepository::getMedioPagoByNombre();
+        $medio_pago = new MedioPagoModel();
+        $caja->estadoCaja = "Activo";
+        return view('cajaForm', compact('caja', 'usuario', 'caja_control', 'idMedioPago', 'nombreMedioPago', 'medio_pago'));
+    
     }
 
     /**
@@ -50,10 +57,13 @@ class CajaController extends Controller
      */
     public function store(Request $request)
     {
+        DB::beginTransaction();
         try {
             $caja = CajaModel::create($request->all());
+            DB::commit();
             return response(['idCaja' => $caja->idCaja], 201);
         } catch (\Exception $e) {
+            DB::rollback();
             return abort(500, $e->getMessage());
         }
     }
@@ -77,10 +87,14 @@ class CajaController extends Controller
      */
     public function edit($id)
     {
-        $caja = CajaModel::find($id);
+        $caja = CajaModel::where('idCaja', $id)->get();
+        $caja = $caja[0];
         $usuario = UsuarioCajaRepository::getUsuarioCajaByNombreAndId();
-        $caja_control = CajaControlModel::where('caja_id', $id)->get();
-        return view('cajaForm', compact('caja', 'usuario', 'caja_control'));
+        $caja_control = CajaControlModel::where('caja_id', $caja->idCaja)->get();
+        $idMedioPago = MedioPagoRepository::getMedioPagoById();
+        $nombreMedioPago = MedioPagoRepository::getMedioPagoByNombre();
+        $medio_pago = MedioPagoModel::where('idMedioPago', $id)->get();
+        return view('cajaForm', compact('caja', 'usuario', 'caja_control', 'idMedioPago', 'nombreMedioPago', 'medio_pago'));
     }
 
     /**

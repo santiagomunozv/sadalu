@@ -5,6 +5,12 @@
 @stop
 
 @section('scripts')
+<script>
+        let medio_pago = '<?php echo json_encode($medio_pago); ?>';
+        let idMedioPago = '<?php echo json_encode($idMedioPago); ?>';
+        let nombreMedioPago = '<?php echo json_encode($nombreMedioPago); ?>';
+        let caja_id = '<?php echo json_encode($caja->idCaja); ?>';
+    </script>
     {{ Html::script('js/maestros/cajaMedioPagoForm.js') }}
 @endsection
 
@@ -35,7 +41,7 @@
                 <div class="col-sm-6">
                     <div class="form-group">
                         {!! Form::label('idCaja', 'Código', ['class' => 'control-label required']) !!}
-                        {!! Form::text('idCaja', null, ['class' => 'form-control', 'placeholder' => 'Ingresa el Código']) !!}
+                        {!! Form::text('idCaja', $caja->idCaja, ['class' => 'form-control', 'placeholder' => 'Ingresa el Código']) !!}
                     </div>
                 </div>
                 <div class="col-sm-6">
@@ -45,7 +51,7 @@
                     </div>
                 </div>
 
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                     <div class="form-group">
                         {!! Form::label('usuario_id', 'Usuario', ['class' => 'control-label required']) !!}
                         {!! Form::select('usuario_id', $usuario, isset($usuario->idUsuario) ? $caja->usuario_id : null, [
@@ -54,7 +60,17 @@
                         ]) !!}
                     </div>
                 </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        {!! Form::label('estadoCaja', 'Estado', ['class' => 'control-label']) !!}
+                        {!! Form::text('estadoCaja', null, [
+                            'readonly' => 'readonly',
+                            'class' => 'form-control',
+                            'placeholder' => 'Ingresa el estado',
+                        ]) !!}
+                    </div>
         </div>
+                        </div>
         <div class="card border-left-info shadow h-100 py-2">
             <ul class="nav nav-pills">
                 <li class="nav-item">
@@ -68,7 +84,7 @@
             <div id="form1">
                 <div class="card-body">
                     <div class="row">
-                        <input type="hidden" name="eliminarRolOpcionId" id="eliminarRolOpcionId" />
+                        <input type="hidden" name="eliminarCajaMedioPago" id="eliminarCajaMedioPago" />
                         <div class="div card-body multi-max">
                             <table class="table table-hover table-borderless table-sm">
                                 <thead class="bg-info text-light">
@@ -78,7 +94,7 @@
                                                 <i class="fas fa-plus"></i>
                                             </button>
                                         </th>
-                                        <th>Medios de pago</th>
+                                        <th>Nombre</th>
                                     </tr>
                                 </thead>
                                 <tbody id="contenedorCajaMedioPago"></tbody>

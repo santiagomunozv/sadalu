@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('nombreCaja')->comment('Nombre');
             $table->unsignedBigInteger('usuario_id')->comment('Id usuario');
             $table->foreign('usuario_id')->references('idUsuario')->on('usuario');
+            $table->string('estadoCaja')->comment('Estado');
         });
     }
 
