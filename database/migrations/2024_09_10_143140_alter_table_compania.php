@@ -28,6 +28,7 @@ return new class extends Migration
             $table->string("direccionCompania")->comment("Dirección");
             $table->string("codigoPostalCompania")->comment("Código postal");
             $table->string("paginaWebCompania")->comment("Código postal");
+            $table->string('logoCompania')->comment('Logo');
         });
     }
 
@@ -54,6 +55,7 @@ return new class extends Migration
             $table->dropColumn('direccionCompania');
             $table->dropColumn('codigoPostalCompania');
             $table->dropColumn('paginaWebCompania');
+            $table->dropColumn('logoCompania');
         });
     }
 };
