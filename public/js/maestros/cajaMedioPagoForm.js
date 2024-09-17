@@ -9,9 +9,8 @@ $(function(){
     // Asegúrate de que GeneradorMultiRegistro está disponible  
     if (typeof GeneradorMultiRegistro !== 'undefined') {
         configuracionCajaMedioPago = new GeneradorMultiRegistro('configuracionCajaMedioPago', 'contenedorCajaMedioPago', 'configuracionCajaMedioPago');
-    
-        let optionsR = [{id: idCaja || 0, name: caja_id || ''}];
-        let optionsC = [{id: idMedioPago || 0, name: idMedioPago || ''}];
+
+        let options=[JSON.parse(idMedioPago),JSON.parse(nombreMedioPago)];
     
         configuracionCajaMedioPago.campoid = 'idMedioPago';
         configuracionCajaMedioPago.campoEliminacion = 'eliminarCajaMedioPago';
@@ -19,13 +18,13 @@ $(function(){
         configuracionCajaMedioPago.funcionEliminacion = '';
         configuracionCajaMedioPago.campos = ['idMedioPago', 'nombreMedioPago'];
         configuracionCajaMedioPago.etiqueta = ['input', 'select'];
-        configuracionCajaMedioPago.tipo = ['hidden','',''];
-        configuracionCajaMedioPago.estilo = ['','', ''];
-        configuracionCajaMedioPago.clase = ['', '', ''];
-        configuracionCajaMedioPago.sololectura = [true,false,false];
-        configuracionCajaMedioPago.opciones = ['', optionsR, optionsC];
-        configuracionCajaMedioPago.funciones = ['','',''];
-        configuracionCajaMedioPago.otrosAtributos = ['','',''];
+        configuracionCajaMedioPago.tipo = ['hidden',''];
+        configuracionCajaMedioPago.estilo = ['',''];
+        configuracionCajaMedioPago.clase = ['', ''];
+        configuracionCajaMedioPago.sololectura = [true,false];
+        configuracionCajaMedioPago.opciones = ['', options];
+        configuracionCajaMedioPago.funciones = ['',''];
+        configuracionCajaMedioPago.otrosAtributos = ['',''];
     
         configuracionCajaMedioPagoData.forEach(dato => {
             configuracionCajaMedioPago.agregarCampos(dato, 'L');

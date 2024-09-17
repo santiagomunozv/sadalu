@@ -43,7 +43,7 @@ class CajaController extends Controller
         $caja_control = CajaControlModel::where('caja_id', $caja->idCaja)->get();
         $idMedioPago = MedioPagoRepository::getMedioPagoById();
         $nombreMedioPago = MedioPagoRepository::getMedioPagoByNombre();
-        $medio_pago = new MedioPagoModel();
+        $medio_pago = new CajaMedioPagoModel();
         $caja->estadoCaja = "Activo";
         return view('cajaForm', compact('caja', 'usuario', 'caja_control', 'idMedioPago', 'nombreMedioPago', 'medio_pago'));
     
