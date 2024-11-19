@@ -16,19 +16,19 @@ return new class extends Migration
         Schema::table('compania', function (Blueprint $table) {
             $table->unsignedBigInteger('tipoidentificacion_id')->nullable()->comment('Id tipo identificación');
             $table->foreign('tipoidentificacion_id')->references('idTipoIdentificacion')->on('tipo_identificacion');
-            $table->integer("identificacionCompania")->comment("Identificación");
-            $table->integer("digitoVerificacionCompania")->comment("Dígito verificación");
-            $table->string("razonSocialCompania")->comment("Razón social");
-            $table->string("nombreComercialCompania")->comment("Nombre comercial");
-            $table->string("telefonoCompania")->comment("Teléfono");
-            $table->string("celularCompania")->comment("Celular");
-            $table->string("emailCompania")->comment("Email");
+            $table->integer("identificacionCompania")->comment("Identificación")->nullable();
+            $table->integer("digitoVerificacionCompania")->comment("Dígito verificación")->nullable();
+            $table->string("razonSocialCompania")->comment("Razón social")->nullable();
+            $table->string("nombreComercialCompania")->comment("Nombre comercial")->nullable();
+            $table->string("telefonoCompania")->comment("Teléfono")->nullable();
+            $table->string("celularCompania")->comment("Celular")->nullable();
+            $table->string("emailCompania")->comment("Email")->nullable();
             $table->unsignedBigInteger('ciudad_id')->nullable()->comment('Id ciudad');
             $table->foreign('ciudad_id')->references('idCiudad')->on('ciudad');
-            $table->string("direccionCompania")->comment("Dirección");
-            $table->string("codigoPostalCompania")->comment("Código postal");
-            $table->string("paginaWebCompania")->comment("Código postal");
-            $table->string('logoCompania')->comment('Logo');
+            $table->string("direccionCompania")->comment("Dirección")->nullable();
+            $table->string("codigoPostalCompania")->comment("Código postal")->nullable();
+            $table->string("paginaWebCompania")->comment("Código postal")->nullable();
+            $table->string('logoCompania')->comment('Logo')->nullable();
         });
     }
 
